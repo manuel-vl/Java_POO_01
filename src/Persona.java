@@ -21,4 +21,29 @@ public class Persona {
         this.peso = peso;
         this.altura = altura;
     }
+
+    public int calcularIMC(){
+        double imc=peso/(Math.pow(altura, 2));
+
+        if(imc<20){
+            System.out.println("Bajo peso");
+            return -1;
+        }else if(imc<=25){
+            System.out.println("Peso saludable");
+            return 0;
+        }else{
+            System.out.println("Sobrepeso");
+            return 1;
+        }
+    }
+
+    public boolean esMayor(){
+        return this.edad>18;
+    }
+
+    @Override
+    public String toString() {
+        String mensaje="Nombre:"+nombre+"\nEdad:"+edad+"\nDNI:"+dni+"\nPeso:"+peso+"\nAltura:"+altura;
+        return mensaje;
+    }
 }
